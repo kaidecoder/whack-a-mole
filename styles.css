@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica;
+    background-color: black;
+}
+
+.wrapper {
+    border: 3px solid #010124;
+    width: 1400px;
+    height: 1000px;
+    /* centering technique */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('./images/donald-giannatti-7ne3hNnojvU-unsplash.jpg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bird {
+    background-image: url("./images/My\ project\ \(2\).png");
+    position: absolute;
+    top: 200px;
+    left: -150px;
+    width: 25%;
+    height: 25%;
+    background-repeat: no-repeat;
+    /*background-position: top; */
+    z-index: -10;
+}
+
+.score {
+    font-size: 150px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.countdown {
+    position: absolute;
+    top: 700px;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #010124;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 20px 50px;
+    border-radius: 5px;
+    z-index: 200;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.game {
+    width: 1280px;
+    height: 1000px;
+    margin: auto;
+    z-index: 200;
+    display: flex;
+    flex-wrap: wrap; /*This gives a grid */
+}
+
+.hole {
+    flex: 1 0 30%;
+    /* flex-grow: how much this item grows relative to the other flexible items - 1 means same size
+     flex-shrink: how much you want this item to shrink 
+     flex-basis: The size of the element compared to the other flexible items */
+     position: relative;
+     overflow: hidden;
+}
+
+.hole::after {
+    content: '';
+    display: block;
+    /* background-image: url('./images/sand.jpg'); */
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    z-index: 2;
+    bottom: -30px;
+    background-size: contain;
+
+}
+
+.mole {
+    background-image: url('./images/My\ project.png');
+    position: absolute;
+    top: 100%; /*hides the moles*/
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.mole.small {
+    background-size: 20%;
+}
+
+.mole.medium {
+    background-size: 30%;
+}
+
+.mole.large {
+    background-size: 40%;
+}
+
+.mole.xlarge {
+    background-size: 50%;
+}
+
+.hole.up .mole {
+    top: 0;
+
+}
